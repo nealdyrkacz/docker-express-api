@@ -1,0 +1,48 @@
+{
+  "name": "express-1",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "license": "MIT",
+  "scripts": {
+    "tsc": "rm -r ./build && tsc",
+    "dev": "ts-node-dev --respawn --transpileOnly ./src/server.ts",
+    "prod": "tsc && node ./src/server.ts",
+    "test": "mocha -r ts-node/register src/**/*.spec.ts"
+  },
+  "devDependencies": {
+    "@types/bluebird": "^3.5.28",
+    "@types/chai": "^4.2.3",
+    "@types/dotenv": "^6.1.1",
+    "@types/express": "^4.17.1",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.7.12",
+    "@types/validator": "^10.11.3",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.1",
+    "sequelize-cli": "^5.5.1",
+    "ts-node": "^8.4.1",
+    "ts-node-dev": "^1.0.0-pre.43",
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.4"
+  },
+  "dependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/body-parser": "^1.17.1",
+    "@types/cors": "^2.8.6",
+    "@types/helmet": "0.0.44",
+    "@types/jsonwebtoken": "^8.3.5",
+    "bcrypt": "^3.0.6",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "helmet": "^3.21.1",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.24.0",
+    "pg": "^7.12.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.19.6",
+    "uuid": "^3.3.3"
+  }
+}
