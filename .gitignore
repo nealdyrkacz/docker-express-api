@@ -62,3 +62,6 @@ typings/
 
 #ignore config.json for database for now
 src/db/config/config.json
+
+#ignore typescript build
+build/
