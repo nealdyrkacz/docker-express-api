@@ -60,8 +60,6 @@ typings/
 # next.js build output
 .next
 
-#ignore config.json for database for now
-src/db/config/
-
 #ignore typescript build
 build/
+src/db/config/config.json
