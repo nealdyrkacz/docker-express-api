@@ -8,7 +8,7 @@ export class Identity extends Model {
   public id!: string; // Note that the `null assertion` `!` is required in strict mode.
   public username!: string;
   public password!: string;
-  public UserId: string;
+  public UserId?: string;
   public active!: boolean;
  
   // timestamps!

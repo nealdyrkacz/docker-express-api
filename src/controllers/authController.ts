@@ -13,7 +13,7 @@ export class AuthController{
     }
 
     //Get user from database
-    let identity: Identity;
+    let identity;
     try {
       identity = await Identity.findOne({
         where: {
@@ -36,7 +36,7 @@ export class AuthController{
     //Sing JWT, valid for 1 hour
     const token = jwt.sign(
       { identityId: identity.id, username: identity.username },
-      process.env.JWT_SECRET,
+      <string>process.env.JWT_SECRET,
       { expiresIn: "1h" }
     );
 

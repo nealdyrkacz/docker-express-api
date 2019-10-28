@@ -1,11 +1,9 @@
-'use strict';
-
 import { initUser, associateUser } from "./user";
 import { initIdentity, associateIdentity } from "./identity";
 
 const Sequelize = require('sequelize');
 
-const env = process.env.NODE_ENV || 'development';
+const env = <string>process.env.NODE_ENV || 'development';
 const config = require(`${__dirname}/../config/config.json`)[env];
 
 
