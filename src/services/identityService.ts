@@ -3,13 +3,13 @@ import { Request } from 'express';
 import { getConnection, getManager } from 'typeorm';
 
 class IdentityService {
-  static async createIdentityFromRequest(req: Request) {
+  static async createIdentityFromRequest(req: Request): Promise<Identity> {
     const { username, password } = req.body;
     const identity = new Identity();
     identity.username = username;
     identity.password = password;
 
-    await this.createIdentity(identity);
+    return await this.createIdentity(identity);
   }
   static async getIdentityByUsername(username: string): Promise<Identity> {
     return await getConnection()
@@ -20,9 +20,8 @@ class IdentityService {
       .getOne();
   }
 
-  private static async createIdentity(identity: Identity): Promise<void> {
-    console.log('INSERT');
-    await getManager().save(identity);
+  private static async createIdentity(identity: Identity): Promise<Identity> {
+    return await getManager().save(identity);
   }
 }
 
