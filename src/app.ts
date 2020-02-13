@@ -18,8 +18,6 @@ class App {
   private cpus: number;
   private PORT: string;
   private isDev: boolean;
-  private TYPEFI_AUTH: string | undefined;
-  private TYPEFI_URL: string | undefined;
 
   constructor() {
     this.app = express();
@@ -79,32 +77,6 @@ class App {
     this.workers[worker.process.pid] = worker;
     console.log(chalk.green('*********** WORKER: ' + worker.process.pid + ' SPAWNED ***********'));
     return worker;
-  }
-
-  private configureTypefiRoutes() {
-    return [
-      '/v1/files',
-      '/v1/tss',
-      '/v1/workflows',
-      '/v1/jobs',
-      '/v1/properties',
-      '/v1/projects',
-      '/v2/files',
-      '/v2/tss',
-      '/v2/workflows',
-      '/v3/tss',
-      '/v3/workflows',
-    ];
-  }
-
-  private configureProxy() {
-    return {
-      target: process.env.TYPEFI_URL,
-      changeOrigin: true,
-      headers: {
-        authorization: process.env.TYPEFI_AUTH,
-      },
-    };
   }
 }
 
