@@ -1,50 +1,74 @@
 {
-  "name": "express-1",
+  "name": "crema-app-api",
   "version": "1.0.0",
-  "main": "build/index.js",
-  "license": "MIT",
-  "scripts": {
-    "tsc": "rm -r ./build && tsc",
-    "start": "ts-node-dev --respawn --transpileOnly ./src/server.ts",
-    "start:prod": "tsc && node ./src/server.ts",
-    "test": "mocha -r ts-node/register src/**/*.spec.ts"
+  "description": "A boilerplate API",
+  "engines": {
+    "node": "10.x"
   },
+  "scripts": {
+    "start": "npm run tsc && node ./build/server.js",
+    "tsc": "rm -r -f ./build && tsc",
+    "dev": "npm run server:start",
+    "test": "mocha -r ts-node/register src/**/*.spec.ts",
+    "server:start": "(ts-node-dev --transpileOnly ./src/server.ts)",
+    "server:stop": "pkill -f 'crema-app-api'"
+  },
+  "cacheDirectories": [
+    "node_modules"
+  ],
   "devDependencies": {
-    "@types/bluebird": "^3.5.28",
+    "@types/body-parser": "^1.17.1",
     "@types/chai": "^4.2.3",
+    "@types/chai-http": "^4.2.0",
+    "@types/cors": "^2.8.6",
     "@types/dotenv": "^6.1.1",
-    "@types/express": "^4.17.1",
+    "@types/helmet": "0.0.44",
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.7.12",
-    "@types/validator": "^10.11.3",
+    "@typescript-eslint/eslint-plugin": "^2.7.0",
+    "@typescript-eslint/parser": "^2.7.0",
     "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.16.0",
     "mocha": "^6.2.1",
-    "sequelize-cli": "^5.5.1",
-    "ts-node": "^8.4.1",
+    "nodemon": "^2.0.2",
+    "prettier": "^1.19.1",
     "ts-node-dev": "^1.0.0-pre.43",
-    "tslint": "^5.20.0",
     "typescript": "^3.6.4"
   },
   "dependencies": {
-    "@types/bcryptjs": "^2.4.2",
-    "@types/body-parser": "^1.17.1",
-    "@types/cors": "^2.8.6",
-    "@types/helmet": "0.0.44",
-    "@types/jsonwebtoken": "^8.3.5",
-    "bcrypt": "^3.0.6",
-    "bcryptjs": "^2.4.3",
+    "@hapi/joi": "^17.1.0",
+    "@types/bcrypt": "^3.0.0",
+    "@types/hapi__joi": "^16.0.9",
+    "@types/jsonwebtoken": "^8.3.7",
+    "@types/lodash": "^4.14.149",
+    "bcrypt": "^3.0.8",
     "body-parser": "^1.19.0",
+    "chalk": "^2.4.2",
     "cluster": "^0.7.7",
     "cors": "^2.8.5",
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
     "helmet": "^3.21.1",
     "jsonwebtoken": "^8.5.1",
-    "moment": "^2.24.0",
     "os": "^0.1.1",
-    "pg": "^7.12.1",
-    "pg-hstore": "^2.3.3",
-    "sequelize": "^5.19.6",
-    "uuid": "^3.3.3"
-  }
+    "pg": "^7.18.1",
+    "reflect-metadata": "^0.1.13",
+    "ts-jsonapi": "^2.1.2",
+    "ts-node": "^8.4.1",
+    "typeorm": "^0.2.22"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cremalab/crema-app-api"
+  },
+  "keywords": [
+    "node",
+    "api",
+    "express",
+    "typeorm"
+  ]
 }

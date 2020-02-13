@@ -1,17 +1,13 @@
-import {Request, Response} from "express";
-import express from "express";
-import { AuthController } from "../controllers/authController";
-import { checkJWT } from "../middlewares/checkJWT";
+import express from 'express';
+import { AuthController } from '../controllers/authController';
 
 export class AuthRoutes {
-    public authController: AuthController = new AuthController();
-           
-    public routes(app: express.Application): void {  
-        
-      app.route('/login')
-        .post(this.authController.login)
+  public authController: AuthController = new AuthController();
 
-      /*app.route('/change-password')
+  public routes(app: express.Application): void {
+    app.route('/login').post(this.authController.login);
+
+    /*app.route('/change-password')
         .post([checkJWT], AuthController.changePassword)*/
-    }
+  }
 }

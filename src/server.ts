@@ -1,19 +1,14 @@
-import App from "./app";
-import dotenv from "dotenv";
+import App from './app';
+import dotenv from 'dotenv';
 
+async function start() {
+  // initialize configuration
+  dotenv.config();
 
-require('./db/models/index')
+  const app = new App();
 
-// initialize configuration
-dotenv.config();
+  await app.connectDatabase();
+  app.start();
+}
 
-var app = new App()
-
-app.start();
-// port is now available to the Node.js runtime 
-// as if it were an environment variable
-/*const PORT= <string>process.env.SERVER_PORT;
-
-app.listen(PORT, () => {
-    console.log('Express server listening on port ' + PORT);
-})*/
+start();
