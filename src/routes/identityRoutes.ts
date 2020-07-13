@@ -8,6 +8,6 @@ export class IdentityRoutes {
   public identityController: IdentityController = new IdentityController();
 
   public routes(app: express.Application): void {
-    app.route('/identity').post([validator(identitySchema)], this.identityController.createIdentity);
+    app.route('/identity').get([], this.identityController.getAll);
   }
 }

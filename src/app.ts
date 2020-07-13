@@ -6,7 +6,6 @@ import cluster from 'cluster';
 import os from 'os';
 import chalk from 'chalk';
 import 'reflect-metadata';
-import { createConnection } from 'typeorm';
 import { Route } from './routes/route';
 import { configureRoutes } from './routes';
 
@@ -43,9 +42,9 @@ class App {
     this.routes.forEach(route => route.route.routes(this.app));
   }
 
-  public async connectDatabase(): Promise<void> {
-    await createConnection();
-  }
+  //public async connectDatabase(): Promise<void> {
+
+  //}
 
   public start(): void {
     // eslint-disable-next-line @typescript-eslint/no-this-alias
