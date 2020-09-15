@@ -5,7 +5,7 @@ export class ServerController {
   public async getStatus(req: Request, res: Response) {
     try {
       const identities = await Identity.findAll({});
-      console.log(await identities[0].getThings());
+      //console.log(await identities[0].getThings());
     } catch (e) {
       console.log(e);
     }

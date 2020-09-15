@@ -1,6 +1,4 @@
 import { Model, DataTypes, Sequelize } from 'sequelize';
-import { database } from '../config/database';
-import { Identity } from './identity.model';
 
 export class Thing extends Model {
   public id!: string;

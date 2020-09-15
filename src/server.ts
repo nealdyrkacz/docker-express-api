@@ -8,12 +8,10 @@ async function start() {
 
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   require('./database/models/index');
-  //console.log(db.sequelize);
   dotenv.config();
 
   const app = new App();
 
-  //await app.connectDatabase();//
   app.start();
 }
 

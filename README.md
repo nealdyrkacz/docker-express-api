@@ -1,2 +1,2 @@
 # crema-app-api
-Express RESTful API , Typescript, TypeORM
+Express RESTful API , Typescript, Sequelize
