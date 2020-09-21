@@ -7,8 +7,8 @@ import cluster from 'cluster';
 import os from 'os';
 import chalk from 'chalk';
 import 'reflect-metadata';
-import { Route } from './routes/route';
-import { configureRoutes } from './routes';
+import { Route } from './v0/routes/route';
+import { configureRoutesV0 } from './v0/routes';
 import adminBroRouter from './admin';
 
 class App {
@@ -41,7 +41,7 @@ class App {
   }
 
   private setupRoutes() {
-    this.routes = configureRoutes();
+    this.routes = configureRoutesV0();
     this.routes.forEach(route => route.route.routes(this.app));
     this.addAdminBroRoute();
   }

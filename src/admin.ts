@@ -12,6 +12,9 @@ const adminBroRoot = '/admin';
 const adminBro = new AdminBro({
   databases: [db],
   rootPath: adminBroRoot,
+  branding: {
+    companyName: 'Crema App API',
+  },
 });
 
 export default AdminBroExpress.buildRouter(adminBro);
