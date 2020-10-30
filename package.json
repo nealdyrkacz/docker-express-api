@@ -1,39 +1,30 @@
 {
-  "name": "crema-app-api",
+  "name": "docker-express-api",
   "version": "1.0.0",
-  "description": "A boilerplate API",
+  "description": "A boilerplate Express API with Docker",
   "engines": {
-    "node": "10.x"
+    "node": "12.x"
   },
   "scripts": {
     "start": "npm run tsc && node ./build/server.js",
     "tsc": "rm -r -f ./build && tsc",
     "dev": "npm run server:start",
-    "test": "mocha -r ts-node/register src/**/*.spec.ts",
-    "server:start": "(ts-node-dev --transpileOnly ./src/server.ts)",
-    "server:stop": "pkill -f 'crema-app-api'"
+    "server:start": "(ts-node-dev --transpileOnly ./src/server.ts)"
   },
   "cacheDirectories": [
     "node_modules"
   ],
   "devDependencies": {
     "@types/body-parser": "^1.17.1",
-    "@types/chai": "^4.2.3",
-    "@types/chai-http": "^4.2.0",
     "@types/cors": "^2.8.6",
     "@types/dotenv": "^6.1.1",
     "@types/helmet": "0.0.44",
-    "@types/mocha": "^5.2.7",
     "@types/node": "^12.7.12",
     "@typescript-eslint/eslint-plugin": "^2.7.0",
     "@typescript-eslint/parser": "^2.7.0",
-    "chai": "^4.2.0",
-    "chai-http": "^4.3.0",
     "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.5.0",
     "eslint-plugin-prettier": "^3.1.1",
-    "eslint-plugin-react": "^7.16.0",
-    "mocha": "^6.2.1",
     "nodemon": "^2.0.2",
     "prettier": "^1.19.1",
     "ts-node-dev": "^1.0.0-pre.43",
@@ -54,6 +45,8 @@
     "express": "^4.17.1",
     "helmet": "^3.21.1",
     "jsonwebtoken": "^8.5.1",
+    "moment": "^2.27.0",
+    "morgan": "^1.10.0",
     "os": "^0.1.1",
     "pg": "^7.18.1",
     "reflect-metadata": "^0.1.13",
@@ -63,12 +56,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cremalab/crema-app-api"
+    "url": "https://github.com/nealdyrkacz/docker-express-api"
   },
   "keywords": [
     "node",
     "api",
     "express",
-    "typeorm"
+    "sequelize"
   ]
 }

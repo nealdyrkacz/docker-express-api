@@ -6,9 +6,10 @@ import cluster from 'cluster';
 import os from 'os';
 import chalk from 'chalk';
 import 'reflect-metadata';
-import { createConnection } from 'typeorm';
-import { Route } from './routes/route';
-import { configureRoutes } from './routes';
+import { Route } from './v0/routes/route';
+import { configureRoutesV0 } from './v0/routes';
+import adminBroRouter from './admin';
+import morgan from 'morgan';
 
 class App {
   public app: express.Application;
@@ -35,6 +36,7 @@ class App {
     this.app.use(bodyParser.urlencoded({ extended: false }));
     this.app.use(cors());
     this.app.use(helmet());
+    this.app.use(morgan('[:date[clf]] :method :url :status :res[content-length] - :response-time ms'));
     this.setupRoutes();
   }
 
