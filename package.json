@@ -27,15 +27,18 @@
     "eslint-plugin-prettier": "^3.1.1",
     "nodemon": "^2.0.2",
     "prettier": "^1.19.1",
-    "ts-node-dev": "^1.0.0-pre.43",
-    "typescript": "^3.6.4"
+    "ts-node-dev": "^1.0.0-pre.43"
   },
   "dependencies": {
+    "@admin-bro/express": "^3.0.0",
+    "@admin-bro/sequelize": "^1.1.0",
     "@hapi/joi": "^17.1.0",
     "@types/bcrypt": "^3.0.0",
     "@types/hapi__joi": "^16.0.9",
     "@types/jsonwebtoken": "^8.3.7",
     "@types/lodash": "^4.14.149",
+    "@types/validator": "^13.1.0",
+    "admin-bro": "^3.2.5",
     "bcrypt": "^3.0.8",
     "body-parser": "^1.19.0",
     "chalk": "^2.4.2",
@@ -43,16 +46,21 @@
     "cors": "^2.8.5",
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
+    "express-formidable": "^1.2.0",
     "helmet": "^3.21.1",
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.27.0",
     "morgan": "^1.10.0",
     "os": "^0.1.1",
     "pg": "^7.18.1",
+    "pg-hstore": "^2.3.3",
     "reflect-metadata": "^0.1.13",
+    "sequelize": "^6.3.1",
+    "sequelize-cli": "^6.2.0",
     "ts-jsonapi": "^2.1.2",
     "ts-node": "^8.4.1",
-    "typeorm": "^0.2.22"
+    "typescript": "^3.9.6",
+    "uuid": "^8.2.0"
   },
   "repository": {
     "type": "git",

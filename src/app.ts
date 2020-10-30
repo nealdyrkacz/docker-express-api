@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 import express from 'express';
 import bodyParser from 'body-parser';
 import helmet from 'helmet';
@@ -41,12 +42,13 @@ class App {
   }
 
   private setupRoutes() {
-    this.routes = configureRoutes();
+    this.routes = configureRoutesV0();
     this.routes.forEach(route => route.route.routes(this.app));
+    this.addAdminBroRoute();
   }
 
-  public async connectDatabase(): Promise<void> {
-    await createConnection();
+  private addAdminBroRoute() {
+    this.app.use('/admin', adminBroRouter);
   }
 
   public start(): void {
@@ -54,9 +56,7 @@ class App {
     const self = this;
     if (cluster.isMaster) {
       console.log(
-        chalk.inverse.cyan.bgBlack(
-          '\n****************** CONNECTED TO DATABASE: ' + process.env.TYPEORM_DATABASE + '\n',
-        ),
+        chalk.inverse.cyan.bgBlack('\n****************** CONNECTED TO DATABASE: ' + process.env.DATABASE + '\n'),
       );
       console.log(chalk.inverse.white.bgBlack('************ EXPRESS SERVER START UP *************'));
       console.log('                 ' + chalk.underline('MASTER ' + process.pid));
